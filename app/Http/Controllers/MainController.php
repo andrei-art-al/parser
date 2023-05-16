@@ -18,9 +18,7 @@ class MainController extends Controller
         // getting data from <textarea>
         $text = trim($request->input('text'));
 
-        // transform to array
         $data = explode("\n", trim($text));
-
         $parser = new Parser($data);
         $parsedData = $parser->getData();
         return response()->json($parsedData);
